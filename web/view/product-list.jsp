@@ -15,13 +15,10 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Listado de Productos</title>
-        <%@include file="header.jspf" %>
-        <link rel="stylesheet" type="text/css" href="../css/style.css"/>
+        <%@include file="/jspf/css-files.jspf" %>
     </head>
     <body>
-        <header>
-
-        </header>
+        <%@include file="/jspf/header.jspf"%>
         <section>
             <h1>Listado de Productos</h1>
             <%--@include file="/view/nav.html" --%>
@@ -67,6 +64,7 @@
                 </table>
             </div>
         </section>
+        <%@include file="/jspf/footer.jspf"%>
     </body>
-    <%@include file="footer.jspf" %>
+    <%@include file="/jspf/js-files.jspf" %>
 </html>

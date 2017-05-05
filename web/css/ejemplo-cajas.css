@@ -1,0 +1,81 @@
+@font-face {
+    font-family: "cursoweb";
+    src: url("../fonts/Russian.ttf");
+}
+
+@font-face {
+    font-family: "cursoweb2";
+    src: url("../fonts/din1451alt.ttf");
+}
+
+body {
+    background-image: url("../img/swirl_pattern.png");
+    background-attachment: fixed;
+}
+
+header {
+    width: 800px;
+    height: 200px;
+    border: solid 2px;
+    margin: auto;
+    background-color: red;
+    /*background-image: url("../img/berchtesgaden2.jpg");
+    background-repeat: no-repeat;*/
+    box-shadow: 10px 10px 10px 2px gray;
+    display: block;
+}
+
+header img {
+    width: inherit;
+    height: inherit;
+}
+
+div {
+    margin: 80px;
+    border-radius: 10px;
+    margin: auto auto;
+}
+
+h1 {
+    font-family: "cursoweb";
+    font-size: 20pt;
+    text-transform: uppercase;
+    text-shadow: 2px 2px gray;
+}
+
+p {
+    font-family: "cursoweb2";
+    font-size: 20pt;
+}
+
+#caja1 {
+    width: 800px;
+    padding: 20px;
+    border: solid black 1px;
+    margin-top: 80px;
+    display: block;
+    position: relative;
+    box-shadow: 0px 0px 10px 10px gray inset;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+#caja1:hover {
+    border: solid red 1px;
+    background-color: blue;
+}
+
+#caja2 {
+    width: 800px;
+    padding: 20px;
+    border: solid black 1px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 10px 5px gray;
+}
+
+#caja3 {
+    width: 800px;
+    padding: 20px;
+    border: solid black 1px;
+    margin-top: 20px;
+    box-shadow: -5px -5px 10px 2px gray;
+}

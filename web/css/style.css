@@ -7,7 +7,54 @@ and open the template in the editor.
     Created on : 04-may-2017, 13:40:00
     Author     : alumno
 */
+body {
+    background-image: url("../img/swirl_pattern.png");
+    background-attachment: fixed;
+    margin: 20px;
+}
 
+header {
+    width: 800px;
+    height: 200px;
+    border: solid 0px;
+    margin: auto;
+    /*background-color: red;*/
+    /*background-image: url("../img/berchtesgaden2.jpg");
+    background-repeat: no-repeat;*/
+    box-shadow: 0px 0px 10px 5px gray;
+    display: block;
+}
+
+header img {
+    width: inherit;
+    height: inherit;
+}
+
+section {
+    width: 800px;
+    border: solid black 1px;
+    border-radius: 0px;
+    padding: 20px;
+    margin: 80px;
+    /*margin-top: 20px;*/
+    margin: auto auto;
+    background-color: white;
+    box-shadow: 0px 0px 10px 5px gray;
+    display: block;
+}
+
+footer {
+    width: 800px;
+    height: 100px;
+    border: solid black 1px;
+    border-top: none;
+    border-radius: 0px;
+    padding: 20px;
+    margin: auto auto;
+    background-color: white;
+    box-shadow: 0px 7px 10px 5px gray;
+    display: block;
+}
 .datagrid table { border-collapse: collapse; text-align: left; width: 100%; }
 .datagrid {font: normal 12px/150% Arial, Helvetica, sans-serif; background: #fff; overflow: hidden; border: 1px solid #006699; -webkit-border-radius: 3px; -moz-border-radius: 3px; border-radius: 3px; }
 .datagrid table td, .datagrid table th { padding: 3px 10px; }

@@ -15,19 +15,26 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Inserción de Producto</title>
-        <%@include file="header.jspf" %>
+        <%@include file="/jspf/css-files.jspf" %>
     </head>
     <%
         String respuesta;
 
         try {
+            String submitted = request.getParameter("submitted");
+            System.out.println("submited: " + submitted);
             String name = request.getParameter("name");
+            System.out.println("name: " + name);
             String description = request.getParameter("description");
             String price = request.getParameter("price");
             String inputDate = request.getParameter("inputDate");
             Archive f = new Archive("ficherodb.bin", "ab");
             if (name == null || description == null || price == null || inputDate == null) {
-                respuesta = "Alguno de los campos quedó sin rellenar";
+                if (submitted != null) {
+                    respuesta = "Alguno de los campos quedó sin rellenar";
+                } else {
+                    respuesta = " ";
+                }
             } else {
                 f.writeObject(new Product(name, description, Float.parseFloat(price), DateUtil.parseSpanishDate(inputDate)));
                 respuesta = "Se insertó con éxito";
@@ -38,9 +45,7 @@
         }
     %>
     <body>
-        <header>
-
-        </header>
+        <%@include file="/jspf/header.jspf"%>
         <section>
             <h1>Inserción de Producto</h1>
             <%--@include file="/view/nav.html" --%>
@@ -54,7 +59,7 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="name">Nombre:</label>
-                            <input id="name" class="form-control" type="text" name="name" placeholder="Nombre del artículo" required>
+                            <input id="name" class="form-control" type="text" name="name" placeholder="Nombre del artículo">
                         </div>
                     </div>
                 </div>
@@ -91,12 +96,14 @@
                             <div class="btn-group" role="group">
                                 <input type="reset" value="Reset" class="btn btn-warning">
                             </div>
+                            <input type="hidden" name="submitted" value="true"/>
                         </div>
                     </div>
                 </div>
             </form>
             <p><%=respuesta%></p>
         </section>
+        <%@include file="/jspf/footer.jspf"%>
     </body>
-    <%@include file="footer.jspf" %>
+    <%@include file="/jspf/js-files.jspf" %>
 </html>
