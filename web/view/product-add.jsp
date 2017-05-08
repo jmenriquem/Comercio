@@ -29,8 +29,9 @@
             String price = request.getParameter("price");
             String inputDate = request.getParameter("inputDate");
             Archive f = new Archive("ficherodb.bin", "ab");
-            if (name == null || description == null || price == null || inputDate == null) {
-                if (submitted != null) {
+            if (name == null || description == null || price == null || inputDate == null 
+                    || name.isEmpty() || description.isEmpty() || price.isEmpty() || inputDate.isEmpty()) {
+                if (submitted != null && !submitted.isEmpty()) {
                     respuesta = "Alguno de los campos quedó sin rellenar";
                 } else {
                     respuesta = " ";
@@ -59,7 +60,7 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="name">Nombre:</label>
-                            <input id="name" class="form-control" type="text" name="name" placeholder="Nombre del artículo">
+                            <input id="name" class="form-control" type="text" name="name" placeholder="Nombre del artículo" required>
                         </div>
                     </div>
                 </div>
