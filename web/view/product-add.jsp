@@ -29,7 +29,7 @@
             String price = request.getParameter("price");
             String inputDate = request.getParameter("inputDate");
             Archive f = new Archive("ficherodb.bin", "ab");
-            if (name == null || description == null || price == null || inputDate == null 
+            if (name == null || description == null || price == null || inputDate == null
                     || name.isEmpty() || description.isEmpty() || price.isEmpty() || inputDate.isEmpty()) {
                 if (submitted != null && !submitted.isEmpty()) {
                     respuesta = "Alguno de los campos quedó sin rellenar";
@@ -63,8 +63,6 @@
                             <input id="name" class="form-control" type="text" name="name" placeholder="Nombre del artículo" required>
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="description">Descripción:</label>
@@ -79,8 +77,6 @@
                             <input id="price" class="form-control" type="number" name="price" step="0.01" placeholder="Precio del artículo" required>
                         </div>
                     </div>
-                </div>
-                <div class="row">
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="inputDate">Fecha de Entrada:</label>
@@ -94,13 +90,17 @@
                             <div class="btn-group" role="group">
                                 <input type="submit" value="Enviar" class="btn btn-primary">
                             </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="btn-group btn-group-justified">
                             <div class="btn-group" role="group">
                                 <input type="reset" value="Reset" class="btn btn-warning">
                             </div>
-                            <input type="hidden" name="submitted" value="true"/>
                         </div>
                     </div>
                 </div>
+                <input type="hidden" name="submitted" value="true"/>
             </form>
             <p><%=respuesta%></p>
         </section>

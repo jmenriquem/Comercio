@@ -50,12 +50,26 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="name">Nombre:</label>
-                            <input id="name" class="form-control" type="text" name="name">
+                            <input id="name" class="form-control" type="text" name="name" required>
                         </div>
                     </div>
                 </div>
-                <input type="submit" value="Borrar">
-                <input type="reset" value="Reset">
+                <div class="row">
+                    <div class="col-lg-4">
+                        <div class="btn-group btn-group-justified">
+                            <div class="btn-group" role="group">
+                                <input type="submit" value="Borrar" class="btn btn-primary">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="btn-group btn-group-justified">
+                            <div class="btn-group" role="group">
+                                <input type="reset" value="Reset" class="btn btn-warning">
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </form>
             <%=respuesta%>
         </section>

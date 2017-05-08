@@ -126,6 +126,20 @@ public class Archive {
         }
     }
 
+    /*public <T> void writeObject(T obj) {
+        try {
+            if (fileExists) {
+                System.err.println("Existia");
+                moos.writeObject(obj);
+            } else {
+                System.err.println("No existia");
+                oos.writeObject(obj);
+            }
+        } catch (IOException io) {
+            System.err.println("Error al escribir" + io.getMessage());
+        }
+    }*/
+
     /**
      * Lee un obj en el fichero abierto
      *
