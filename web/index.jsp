@@ -28,7 +28,7 @@
             </ul>
         </section>
         <footer>
-            <small>&copy; 2017 Mercería Joselito.</small><br/>
+            <small>&copy; 2017 IKEA Muebles Fáciles de Montar.</small><br/>
             <small>Diseño web by web8.</small>
         </footer>
     </body>
