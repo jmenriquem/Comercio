@@ -12,20 +12,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.OutputStream;
-
-class AperturaFicheroExcepcion extends Exception {
-
-    public AperturaFicheroExcepcion(String msg) {
-        super(msg);
-    }
-}
-
-class CierreFicheroExcepcion extends Exception {
-
-    public CierreFicheroExcepcion(String msg) {
-        super(msg);
-    }
-}
+import java.util.ArrayList;
+import java.util.List;
 
 class MiObjectOutputStream extends ObjectOutputStream {
 
@@ -66,11 +54,11 @@ public class Archive {
      * @param fileName - El nombre del fichero a abrir
      * @param accessMode - El modo de apertura wb: Escritura binario rb: Lectura
      * binario ab: Adición binario
-     * @throws colegio.AperturaFicheroExcepcion
+     * @throws controller.ArchiveOpenException
      *
      */
     public Archive(String fileName, String accessMode)
-            throws AperturaFicheroExcepcion {
+            throws ArchiveOpenException {
         f = new File(fileName);
         switch (accessMode) {
             case "wb": //Modo 1
@@ -79,7 +67,7 @@ public class Archive {
                 try {
                     oos = new ObjectOutputStream(new FileOutputStream(f));
                 } catch (IOException ex) {
-                    throw new AperturaFicheroExcepcion(
+                    throw new ArchiveOpenException(
                             "Error al abrir el fichero");
                 }
                 break;
@@ -89,7 +77,7 @@ public class Archive {
                 try {
                     ois = new ObjectInputStream(new FileInputStream(f));
                 } catch (IOException ex) {
-                    throw new AperturaFicheroExcepcion(
+                    throw new ArchiveOpenException(
                             "Error al abrir el fichero");
                 }
                 break;
@@ -101,20 +89,20 @@ public class Archive {
                     try {
                         moos = new MiObjectOutputStream(new FileOutputStream(f, true));
                     } catch (IOException ex) {
-                        throw new AperturaFicheroExcepcion(
+                        throw new ArchiveOpenException(
                                 "Error al abrir el fichero");
                     }
                 } else {
                     try {
                         oos = new ObjectOutputStream(new FileOutputStream(f, true));
                     } catch (IOException ex) {
-                        throw new AperturaFicheroExcepcion(
+                        throw new ArchiveOpenException(
                                 "Error al abrir el fichero");
                     }
                 }
                 break;
             default:
-                throw new AperturaFicheroExcepcion(
+                throw new ArchiveOpenException(
                         "modo de apertura incorrecto");
         }
     }
@@ -152,7 +140,63 @@ public class Archive {
         return obj;
     }
 
-    public void close() throws CierreFicheroExcepcion {
+    public ArrayList<Object> leerTodos() {
+        ArrayList<Object> listado = new ArrayList<>();
+        try {
+            Object obj = this.ois.readObject();
+            while (obj != null) {
+                listado.add(obj);
+                obj = this.ois.readObject();
+            }
+        } catch (IOException | ClassNotFoundException io) {
+
+        }
+        return listado;
+    }
+
+    public List leerTodosAntiguo() {
+        List listado = new ArrayList();
+        try {
+            Object obj = this.ois.readObject();
+            while (obj != null) {
+                listado.add(obj);
+                obj = this.ois.readObject();
+            }
+        } catch (IOException | ClassNotFoundException io) {
+
+        }
+        return listado;
+    }
+
+    public void escribirTodos(ArrayList<Object> obj) {
+        try {
+            for (Object objeto : obj) {
+                if (fileExists) {
+                    this.moos.writeObject(objeto);
+                } else {
+                    this.oos.writeObject(objeto);
+                }
+            }
+        } catch (IOException io) {
+
+        }
+    }
+
+    public void escribirTodos(List obj) {
+        try {
+            for (Object objeto : obj) {
+                if (fileExists) {
+                    this.moos.writeObject(objeto);
+                } else {
+                    this.oos.writeObject(objeto);
+                }
+            }
+        } catch (IOException io) {
+
+        }
+    }
+
+    public void close() throws ArchiveCloseException {
         try {
             switch (fileAccessMode) {
                 case 1:
@@ -170,7 +214,7 @@ public class Archive {
                     break;
             }
         } catch (IOException io) {
-            throw new CierreFicheroExcepcion("Error al cerrar el fichero");
+            throw new ArchiveCloseException("Error al cerrar el fichero");
         }
     }
 }

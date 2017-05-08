@@ -23,8 +23,8 @@
             <ul>
                 <li><a href="view/product-list.jsp">Listado de Productos</a></li>
                 <li><a href="view/product-add.jsp">Inserción de Productos</a></li>
-                    <%--li><a href="buscaAlumno.jsp">Buscar un alumno</a></li>
-                    <li><a href="borraAlumno.jsp">Borrar un alumno</a></li--%>
+                    <%--li><a href="buscaAlumno.jsp">Buscar un alumno</a></li--%>
+                <li><a href="view/product-remove.jsp">Borrar un Producto</a></li>
             </ul>
         </section>
         <footer>
