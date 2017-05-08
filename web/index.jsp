@@ -28,6 +28,8 @@
             </ul>
         </section>
         <footer>
+            <small>&copy; 2017 Mercería Joselito.</small><br/>
+            <small>Diseño web by web8.</small>
         </footer>
     </body>
     <script src="../js/jquery-3.2.1.min.js"></script>

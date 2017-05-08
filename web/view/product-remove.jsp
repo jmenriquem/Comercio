@@ -50,7 +50,7 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="name">Nombre:</label>
-                            <input id="name" class="form-control" type="text" name="name" required>
+                            <input id="name" class="form-control" type="text" name="name" required />
                         </div>
                     </div>
                 </div>
@@ -58,14 +58,14 @@
                     <div class="col-lg-4">
                         <div class="btn-group btn-group-justified">
                             <div class="btn-group" role="group">
-                                <input type="submit" value="Borrar" class="btn btn-primary">
+                                <input type="submit" value="Borrar" class="btn btn-primary" />
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="btn-group btn-group-justified">
                             <div class="btn-group" role="group">
-                                <input type="reset" value="Reset" class="btn btn-warning">
+                                <input type="reset" value="Reset" class="btn btn-warning" />
                             </div>
                         </div>
                     </div>

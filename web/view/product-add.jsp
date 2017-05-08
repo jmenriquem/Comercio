@@ -60,13 +60,13 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="name">Nombre:</label>
-                            <input id="name" class="form-control" type="text" name="name" placeholder="Nombre del artículo" required>
+                            <input id="name" class="form-control" type="text" name="name" placeholder="Nombre del artículo" required />
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="description">Descripción:</label>
-                            <input id="description" class="form-control" type="text" name="description" placeholder="Descripción del artículo" required>
+                            <input id="description" class="form-control" type="text" name="description" placeholder="Descripción del artículo" required />
                         </div>
                     </div>
                 </div>
@@ -74,13 +74,13 @@
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="price">Precio:</label>
-                            <input id="price" class="form-control" type="number" name="price" step="0.01" placeholder="Precio del artículo" required>
+                            <input id="price" class="form-control" type="number" name="price" step="0.01" placeholder="Precio del artículo" required />
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
                             <label for="inputDate">Fecha de Entrada:</label>
-                            <input id="inputDate" class="form-control" type="text" name="inputDate" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="Fecha de entrada del artículo" required>
+                            <input id="inputDate" class="form-control" type="text" name="inputDate" pattern="\d{1,2}/\d{1,2}/\d{4}" placeholder="Fecha de entrada del artículo" required />
                         </div>
                     </div>
                 </div>
@@ -88,14 +88,14 @@
                     <div class="col-lg-4">
                         <div class="btn-group btn-group-justified">
                             <div class="btn-group" role="group">
-                                <input type="submit" value="Enviar" class="btn btn-primary">
+                                <input type="submit" value="Enviar" class="btn btn-primary" />
                             </div>
                         </div>
                     </div>
                     <div class="col-lg-4">
                         <div class="btn-group btn-group-justified">
                             <div class="btn-group" role="group">
-                                <input type="reset" value="Reset" class="btn btn-warning">
+                                <input type="reset" value="Reset" class="btn btn-warning" />
                             </div>
                         </div>
                     </div>
