@@ -15,7 +15,7 @@
     </head>
     <body>
         <header>
-            <a href="http://192.168.1.122:8080/Comercio"><img src="img/berchtesgaden2.jpg" alt="Paisaje" /></a>
+            <a href="http://192.168.1.122:8080/Comercio"><img src="img/banner.jpg" alt="Paisaje" /></a>
         </header>
         <section>
             <h1>Comercio</h1>
